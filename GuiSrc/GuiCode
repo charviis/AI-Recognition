@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
 from PIL import Image, ImageTk
-import requests
+import requests 
 
 # Set up the main window
 window = tk.Tk()
