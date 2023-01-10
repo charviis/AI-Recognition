@@ -1,0 +1,23 @@
+Pro vytvoření sítě,
+ učení a rozpoznávání značek pomocí umělé inteligence se většinou používají konvoluční neurónové sítě (CNN).
+  Tyto sítě se specializují na rozpoznávání obrazů a jsou velmi účinné v oblastech, jako je rozpoznávání značek.
+
+Sestavení sítě:
+ Nejdříve se vytvoří architektura konvoluční neurónové sítě. To zahrnuje volbu vrstev,
+  počtu neuronů v každé vrstvě a typů operací, které se používají. Nejčastěji se používají konvoluční vrstvy, které se specializují na zachycení vzorů v obraze, a plně propojené vrstvy, které se specializují na klasifikaci.
+
+Načtení a příprava dat:
+ Poté se načtou obrázky značek a připraví se pro učení sítě. To zahrnuje kroky jako normalizace,
+  rozdělení dat na treninková a testovací data a případné rozmazání nebo rotaci obrázků pro zlepšení robustnosti sítě.
+
+Trénink sítě:
+ Poté se síť natrénuje na treninkových datech. To se provádí pomocí algoritmu zpětného propočtu a optimalizace.
+  Používá se například stochastický gradient descent nebo Adam optimizer.
+
+Testování a ověření:
+ Poté se síť otestuje na testovacích datech a ověří se její účinnost.
+  Metriky jako přesnost, zpětné přenosy a F1 skóre mohou být použity k měření účinnosti sítě.
+
+Deployment: 
+Poté může být síť nasazena do produkčního prostředí,
+ kde lze využít k rozpoznávání značek v reálném čase.
