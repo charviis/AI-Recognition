@@ -21,7 +21,7 @@ def open_image():
     image_label.config(image=image)
     image_label.image = image
     detect_signs(file_path)
-    size = (200, 200)
+
 # function to detect the signs in the image
 def detect_signs(file_path):
     image = cv2.imread(file_path)
@@ -34,36 +34,6 @@ def detect_signs(file_path):
     image = ImageTk.PhotoImage(image)
     image_label.config(image=image)
     image_label.image = image
-
-# Create a Scale widget
-size_scale = tk.Scale(root, from_=50, to=500, orient="horizontal", label="Image Size")
-size_scale.pack()
-
-# Create a function to handle the scale's value change
-def on_scale_change(val):
-    new_size = int(val)
-    # resize the image according to the new size
-    resized_image = cv2.resize(original_image, (new_size, new_size), interpolation = cv2.INTER_LINEAR)
-    # update the image_label with the resized image
-    image_label.config(image=resized_image)
-    image_label.image = resized_image
-
-# Bind the Scale's value change to the function
-size_scale.bind("<ButtonRelease-1>", lambda event: on_scale_change(size_scale.get()))
-
-# Create a canvas widget
-canvas = tk.Canvas(root)
-canvas.pack(side="left", fill="both", expand=True)
-
-# Create a scrollbar widget
-scrollbar = tk.Scrollbar(root, command=canvas.yview)
-scrollbar.pack(side="right", fill="y")
-
-# Configure the canvas to use the scrollbar
-canvas.configure(yscrollcommand=scrollbar.set)
-
-# Update the canvas to show the image
-canvas.config(scrollregion=canvas.bbox(tk.ALL))
 
 # button to open an image file
 open_button = tk.Button(root, text="Open Image", command=open_image)
