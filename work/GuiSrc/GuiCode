@@ -34,21 +34,7 @@ def detect_signs(file_path):
     image = ImageTk.PhotoImage(image)
     image_label.config(image=image)
     image_label.image = image
-
-# define the size you want to shrink the image to
-size = (image.shape[1]/2, image.shape[0]/2)
-
-# shrink the image
-shrink_image = cv2.resize(image, size, interpolation = cv2.INTER_LINEAR)
-
-# convert the shrink image to PhotoImage object
-shrink_image = Image.fromarray(cv2.cvtColor(shrink_image, cv2.COLOR_BGR2RGB))
-shrink_image = ImageTk.PhotoImage(shrink_image)
-
-# create a label to display the shrink image
-image_label = tk.Label(root, image=shrink_image)
-image_label.pack()
-
+    
 # button to open an image file
 open_button = tk.Button(root, text="Open Image", command=open_image)
 open_button.pack()
