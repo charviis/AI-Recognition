@@ -51,6 +51,20 @@ def on_scale_change(val):
 # Bind the Scale's value change to the function
 size_scale.bind("<ButtonRelease-1>", lambda event: on_scale_change(size_scale.get()))
 
+# Create a canvas widget
+canvas = tk.Canvas(root)
+canvas.pack(side="left", fill="both", expand=True)
+
+# Create a scrollbar widget
+scrollbar = tk.Scrollbar(root, command=canvas.yview)
+scrollbar.pack(side="right", fill="y")
+
+# Configure the canvas to use the scrollbar
+canvas.configure(yscrollcommand=scrollbar.set)
+
+# Update the canvas to show the image
+canvas.config(scrollregion=canvas.bbox(tk.ALL))
+
 # button to open an image file
 open_button = tk.Button(root, text="Open Image", command=open_image)
 open_button.pack()
