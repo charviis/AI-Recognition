@@ -4,35 +4,12 @@ from PIL import ImageTk, Image
 import numpy as np
 import cv2
 
-from matplotlib import pyplot as plt
-
-img = cv2.imread("People&Signs\image1.jpg")
-
-img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
-stop_data = cv2.CascadeClassifier('Haarcascades\stop_data.xml')
-
-found = stop_data.detectMultiScale(img_gray,
-								minSize =(20, 20))
-
-amount_found = len(found)
-
-if amount_found != 0:
-
-	for (x, y, width, height) in found:
-
-		cv2.rectangle(img_rgb, (x, y),
-					(x + height, y + width),
-					(0, 255, 0), 5)
-
-plt.subplot(1, 1, 1)
-plt.imshow(img_rgb)
-plt.show()
+# import the Haarcascade classifier
+face_cascade = cv2.CascadeClassifier("work\stop_data.xml")
 
 # initialize the GUI
 root = tk.Tk()
-root.title("Sign Recognition")
+root.title("Sign Detection")
 
 # function to open an image file and display it on the GUI
 def open_image():
@@ -43,20 +20,13 @@ def open_image():
     image = ImageTk.PhotoImage(image)
     image_label.config(image=image)
     image_label.image = image
-
-    # button to open an image file
-open_button = tk.Button(root, text="Open Image", command=open_image)
-open_button.pack()
-
-# label to display the selected image
-image_label = tk.Label(root)
-image_label.pack()
-
-# function to run the AI model and display the prediction on the GUI
-def detect_signs():
-    image = cv2.imread(stop_data.xml)
+    detect_signs(file_path)
+    size = (200, 200)
+# function to detect the signs in the image
+def detect_signs(file_path):
+    image = cv2.imread(file_path)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    signs = sign_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+    signs = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
     for (x,y,w,h) in signs:
         cv2.rectangle(image,(x,y),(x+w,y+h),(255,0,0),2)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -65,9 +35,28 @@ def detect_signs():
     image_label.config(image=image)
     image_label.image = image
 
-# button to detect the signs
-detect_button = tk.Button(root, text="Detect Signs", command=detect_signs)
-detect_button.pack()
+# Create a Scale widget
+size_scale = tk.Scale(root, from_=50, to=500, orient="horizontal", label="Image Size")
+size_scale.pack()
 
+# Create a function to handle the scale's value change
+def on_scale_change(val):
+    new_size = int(val)
+    # resize the image according to the new size
+    resized_image = cv2.resize(original_image, (new_size, new_size), interpolation = cv2.INTER_LINEAR)
+    # update the image_label with the resized image
+    image_label.config(image=resized_image)
+    image_label.image = resized_image
+
+# Bind the Scale's value change to the function
+size_scale.bind("<ButtonRelease-1>", lambda event: on_scale_change(size_scale.get()))
+
+# button to open an image file
+open_button = tk.Button(root, text="Open Image", command=open_image)
+open_button.pack()
+
+# label to display the selected image
+image_label = tk.Label(root)
+image_label.pack()
 
 root.mainloop()
