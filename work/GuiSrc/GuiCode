@@ -43,16 +43,8 @@ def open_image():
     image = ImageTk.PhotoImage(image)
     image_label.config(image=image)
     image_label.image = image
-    predict_sign(file_path)
 
-# function to run the AI model and display the prediction on the GUI
-def predict_sign(file_path):
-    image = cv2.imread(file_path)
-    # preprocess the image as needed
-    prediction = your_model.predict(image)
-    prediction_label.config(text="Predicted Sign: " + prediction)
-
-# button to open an image file
+    # button to open an image file
 open_button = tk.Button(root, text="Open Image", command=open_image)
 open_button.pack()
 
@@ -60,8 +52,22 @@ open_button.pack()
 image_label = tk.Label(root)
 image_label.pack()
 
-# label to display the prediction
-prediction_label = tk.Label(root)
-prediction_label.pack()
+# function to run the AI model and display the prediction on the GUI
+def detect_signs():
+    image = cv2.imread(stop_data.xml)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    signs = sign_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+    for (x,y,w,h) in signs:
+        cv2.rectangle(image,(x,y),(x+w,y+h),(255,0,0),2)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    image = Image.fromarray(image)
+    image = ImageTk.PhotoImage(image)
+    image_label.config(image=image)
+    image_label.image = image
+
+# button to detect the signs
+detect_button = tk.Button(root, text="Detect Signs", command=detect_signs)
+detect_button.pack()
+
 
 root.mainloop()
