@@ -1,12 +1,12 @@
 import cv2
 from matplotlib import pyplot as plt
 
-img = cv2.imread("image.jpg")
+img = cv2.imread("People&Signs\image1.jpg")
 
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-stop_data = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
+stop_data = cv2.CascadeClassifier('Haarcascades\stop_data.xml')
 
 found = stop_data.detectMultiScale(img_gray,
 								minSize =(20, 20))
