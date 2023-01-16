@@ -3,6 +3,7 @@ from tkinter import filedialog
 from PIL import ImageTk, Image
 import numpy as np
 import cv2
+import cgitb cgitb.enable()
 
 # import the Haarcascade classifier
 face_cascade = cv2.CascadeClassifier("work\stop_data.xml")
