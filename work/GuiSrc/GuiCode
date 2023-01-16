@@ -10,8 +10,8 @@ face_cascade = cv2.CascadeClassifier("work\stop_data.xml")
 # initialize the GUI
 root = tk.Tk()
 root.title("Sign Detection")
-root.geometry("500x500")
-root.minsize(width=300, height=300)
+root.geometry("800x700")
+root.minsize(width=500, height=500)
 # function to open an image file and display it on the GUI
 def open_image():
     file_path = filedialog.askopenfilename()
