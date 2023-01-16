@@ -10,7 +10,8 @@ face_cascade = cv2.CascadeClassifier("work\stop_data.xml")
 # initialize the GUI
 root = tk.Tk()
 root.title("Sign Detection")
-
+root.geometry("500x500")
+root.minsize(width=300, height=300)
 # function to open an image file and display it on the GUI
 def open_image():
     file_path = filedialog.askopenfilename()
@@ -21,7 +22,7 @@ def open_image():
     image_label.config(image=image)
     image_label.image = image
     detect_signs(file_path)
-
+    
 # function to detect the signs in the image
 def detect_signs(file_path):
     image = cv2.imread(file_path)
