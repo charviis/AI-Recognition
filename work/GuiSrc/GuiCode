@@ -12,6 +12,13 @@ root = tk.Tk()
 root.title("Sign Detection")
 root.geometry("800x700")
 root.minsize(width=500, height=500)
+root.configure(background='grey')
+root.option_add("*Font", "Helvetica 20")
+root.option_add("*Button.Relief", "flat")
+root.option_add("*Button.Background", "grey")
+root.option_add("*Button.ActiveBackground", "white")
+
+
 # function to open an image file and display it on the GUI
 def open_image():
     file_path = filedialog.askopenfilename()
