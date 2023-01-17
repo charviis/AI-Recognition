@@ -3,6 +3,7 @@ from tkinter import filedialog
 from PIL import ImageTk, Image
 import numpy as np
 import cv2
+import sys
 
 # import the Haarcascade classifier
 face_cascade = cv2.CascadeClassifier("work\GuiSrc\stop_data.xml")
@@ -53,5 +54,8 @@ open_button.pack()
 # label to display the selected image
 image_label = tk.Label(root)
 image_label.pack()
+
+# create console log.txt file
+sys.stdout = open("work\GuiSrc\log.txt", "w")
 
 root.mainloop()
