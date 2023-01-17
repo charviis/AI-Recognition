@@ -24,18 +24,18 @@ root.resizable(False, False)
 
 # function to open an image file and display it on the GUI
 def open_image():
-    file_path = filedialog.askopenfilename()
-    image = cv2.imread(file_path)
+    path = filedialog.askopenfilename()
+    image = cv2.imread(path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     image = Image.fromarray(image)
     image = ImageTk.PhotoImage(image)
     image_label.config(image=image)
     image_label.image = image
-    detect_signs(file_path)
+    detect_signs(path)
     
 # function to detect the signs in the image
-def detect_signs(file_path):
-    image = cv2.imread(file_path)
+def detect_signs(path):
+    image = cv2.imread(path)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     signs = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
     for (x,y,w,h) in signs:
