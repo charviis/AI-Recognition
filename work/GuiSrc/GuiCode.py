@@ -5,7 +5,7 @@ import numpy as np
 import cv2
 
 # import the Haarcascade classifier
-face_cascade = cv2.CascadeClassifier("work\stop_data.xml")
+face_cascade = cv2.CascadeClassifier("work\GuiSrc\stop_data.xml")
 
 # initialize the GUI
 root = tk.Tk()
