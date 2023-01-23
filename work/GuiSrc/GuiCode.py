@@ -55,7 +55,4 @@ open_button.pack()
 image_label = tk.Label(root)
 image_label.pack()
 
-# create console log.txt file
-sys.stdout = open("work\GuiSrc\log.txt", "w")
-
 root.mainloop()

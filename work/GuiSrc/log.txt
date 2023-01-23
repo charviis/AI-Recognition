@@ -1,0 +1,10 @@
+[ERROR:0@0.007] global D:\a\opencv-python\opencv-python\opencv\modules\core\src\persistence.cpp (505) cv::FileStorage::Impl::open Can't open file: 'work\GuiSrc\stop_data.xml' in read mode
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\tkinter\__init__.py", line 1892, in __call__
+    return self.func(*args)
+  File "C:\Users\marek\Desktop\AI-Recognition\work\GuiSrc\GuiCode.py", line 35, in open_image
+    detect_signs(path)
+  File "C:\Users\marek\Desktop\AI-Recognition\work\GuiSrc\GuiCode.py", line 41, in detect_signs
+    signs = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+cv2.error: OpenCV(4.6.0) D:\a\opencv-python\opencv-python\opencv\modules\objdetect\src\cascadedetect.cpp:1689: error: (-215:Assertion failed) !empty() in function 'cv::CascadeClassifier::detectMultiScale'
