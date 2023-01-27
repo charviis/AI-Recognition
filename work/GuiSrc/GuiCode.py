@@ -33,7 +33,12 @@ def open_image():
     image_label.config(image=image)
     image_label.image = image
     detect_signs(path)
-    
+
+# error handling
+if face_cascade.empty():
+    print("Error: Unable to load the classifier")
+    sys.exit(0)
+
 # function to detect the signs in the image
 def detect_signs(path):
     image = cv2.imread(path)
