@@ -7,7 +7,6 @@ import sys
 
 # import the Haarcascade classifier
 face_cascade = cv2.CascadeClassifier("work\GuiSrc\stop_data.xml")
-# more jakto??
 
 # initialize the GUI
 root = tk.Tk()
@@ -24,11 +23,6 @@ root.option_add("*Button.ActiveForeground", "black")
 root.option_add("*Button.BorderWidth", "0")
 root.resizable(False, False)
 
-# error handling
-if face_cascade.empty():
-    print("Error loading cascade")
-    sys.exit()
-
 # function to open an image file and display it on the GUI
 def open_image():
     path = filedialog.askopenfilename()
@@ -39,7 +33,7 @@ def open_image():
     image_label.config(image=image)
     image_label.image = image
     detect_signs(path)
-
+    
 # function to detect the signs in the image
 def detect_signs(path):
     image = cv2.imread(path)
@@ -61,5 +55,7 @@ open_button.pack()
 image_label = tk.Label(root)
 image_label.pack()
 
-# start the GUI
+# create console log.txt file
+sys.stdout = open("work\GuiSrc\log.txt", "w")
+
 root.mainloop()
