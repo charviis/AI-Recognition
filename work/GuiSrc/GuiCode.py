@@ -7,6 +7,7 @@ import sys
 
 # import the Haarcascade classifier
 face_cascade = cv2.CascadeClassifier("work\GuiSrc\stop_data.xml")
+# more jakto??
 
 # initialize the GUI
 root = tk.Tk()
