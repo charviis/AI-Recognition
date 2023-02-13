@@ -1,24 +1,25 @@
-Pro vytvoření sítě,
- učení a rozpoznávání značek pomocí umělé inteligence se většinou používají konvoluční neurónové sítě (CNN).
-  Tyto sítě se specializují na rozpoznávání obrazů a jsou velmi účinné v oblastech, jako je rozpoznávání značek.
+#Dokumentace k maturitní práci s názvem "Rozpoznávání dopravních značek pomocí umělé inteligence s využitím jazyka Python a frameworků TensorFlow a PyTorch"
 
-Sestavení sítě:
- Nejdříve se vytvoří architektura konvoluční neurónové sítě. To zahrnuje volbu vrstev,
-  počtu neuronů v každé vrstvě a typů operací, které se používají. Nejčastěji se používají konvoluční vrstvy,
-   které se specializují na zachycení vzorů v obraze, a plně propojené vrstvy, které se specializují na klasifikaci.
+##Úvod:
+Tato maturitní práce se zaměřuje na využití umělé inteligence při rozpoznávání dopravních značek. 
+Cílem této práce je vytvořit model, který bude schopný rozpoznat a klasifikovat různé typy dopravních značek.
 
-Načtení a příprava dat:
- Poté se načtou obrázky značek a připraví se pro učení sítě. To zahrnuje kroky jako normalizace,
-  rozdělení dat na treninková a testovací data a případné rozmazání nebo rotaci obrázků pro zlepšení robustnosti sítě.
+##Popis řešení:
+K vytvoření modelu budeme využívat jazyka Python a frameworků TensorFlow a PyTorch. 
+Tyto frameworky nám umožní vytvořit a trénovat neuronovou síť, která bude schopná rozpoznat dopravní značky. 
+Pro trénování budeme využívat množství obrázků dopravních značek, které budeme stahovat z internetu.
 
-Trénink sítě:
- Poté se síť natrénuje na treninkových datech. To se provádí pomocí algoritmu zpětného propočtu a optimalizace.
-  Používá se například stochastický gradient descent nebo Adam optimizer.
+##Výběr frameworků:
+TensorFlow a PyTorch jsou dva nejpopulárnější frameworky pro vývoj a trénování neuronových sítí. 
+Tyto frameworky nabízejí jednoduchý a intuitivní způsob, jak vytvářet a trénovat neuronové sítě. 
+Rozhodli jsme se pro využití obou frameworků, abychom mohli porovnat jejich výkon a schopnosti v oblasti rozpoznávání dopravních značek.
 
-Testování a ověření:
- Poté se síť otestuje na testovacích datech a ověří se její účinnost.
-  Metriky jako přesnost, zpětné přenosy a F1 skóre mohou být použity k měření účinnosti sítě.
+##Postup práce:
 
-Deployment: 
- Poté může být síť nasazena do produkčního prostředí,
-  kde lze využít k rozpoznávání značek v reálném čase.
+- Stáhnutí obrázků dopravních značek z internetu.
+- Příprava dat pro trénování.
+- Vytvoření modelu v TensorFlow a PyTorch.
+- Trénování modelu s využitím připravených dat.
+- Otestování modelu na nových obrázcích dopravních značek.
+- Porovnání výsledků modelů v TensorFlow a PyTorch.
+- Zhodnocení výsledků a závěrečné závěry.
