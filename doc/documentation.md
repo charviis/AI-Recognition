@@ -16,10 +16,7 @@ Rozhodli jsme se pro využití obou frameworků, abychom mohli porovnat jejich v
 
 ## Postup práce:
 
-- Stáhnutí obrázků dopravních značek z internetu.
-- Příprava dat pro trénování.
-- Vytvoření modelu v TensorFlow a PyTorch.
-- Trénování modelu s využitím připravených dat.
-- Otestování modelu na nových obrázcích dopravních značek.
-- Porovnání výsledků modelů v TensorFlow a PyTorch.
-- Zhodnocení výsledků a závěrečné závěry.
+- Sběr dat: Pro výcvik modelu byl sbírán dataset, který obsahoval obrázky různých typů dopravních značek. Tyto obrázky byly získány z veřejně dostupných zdrojů, jako je například Flickr a Google Images.
+- Předzpracování dat: Sbírané obrázky byly předzpracovány tak, aby byly ve stejném formátu a velikosti. Také byly odstraněny nepotřebné části obrázků, jako jsou například pozadí a nepotřebné objekty.
+- Výcvik modelu: Pro výcvik modelu byl použit framework TensorFlow a PyTorch. Tyto frameworky byly vybrány, protože jsou velmi efektivní a mají velkou podporu v komunitě. Model byl vytvořen tak, aby mohl rozpoznat a klasifikovat různé typy dopravních značek.
+- Otestování modelu: Po výcviku byl model otestován na testovacím datasetu, který nebyl použit při výcviku. Tyto testy byly provedeny, aby se zjistilo, jak dobře model rozpoznává různé typy dopravních značek.
