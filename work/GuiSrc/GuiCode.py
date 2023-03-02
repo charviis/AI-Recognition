@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import filedialog
 from PIL import ImageTk, Image
@@ -6,7 +7,7 @@ import cv2
 import sys
 
 # import the Haarcascade classifier
-face_cascade = cv2.CascadeClassifier("work\GuiSrc\stop_data.xml")
+face_cascade = cv2.CascadeClassifier(os.path.join(cv2.data.haarcascades, '..\work\GuiSrc\stop_data.xml'))
 
 # initialize the GUI
 root = tk.Tk()
