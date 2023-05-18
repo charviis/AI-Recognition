@@ -7,7 +7,7 @@ import cv2
 import sys
 
 # import the Haarcascade classifier
-face_cascade = cv2.CascadeClassifier( 'work\GuiSrc\haarcascade_signs.xml' )
+face_cascade = cv2.CascadeClassifier( 'work\stop_data.xml' )
 
 # initialize the GUI
 root = tk.Tk()
@@ -62,6 +62,6 @@ image_label = tk.Label(root)
 image_label.pack()
 
 # create console log.txt file
-sys.stdout = open("work\GuiSrc\log.txt", "w")
+sys.stdout = open("work\log.txt", "w")
 
 root.mainloop()
