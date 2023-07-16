@@ -1,8 +1,6 @@
-import os
 import tkinter as tk
 from tkinter import filedialog
 from PIL import ImageTk, Image
-import numpy as np
 import cv2
 import sys
 
@@ -61,7 +59,8 @@ open_button.pack()
 image_label = tk.Label(root)
 image_label.pack()
 
-# create console log.txt file
-sys.stdout = open("work\log.txt", "w")
+# create log.txt file to store errors
+sys.stdout = open('log.txt', 'w')
+
 
 root.mainloop()
